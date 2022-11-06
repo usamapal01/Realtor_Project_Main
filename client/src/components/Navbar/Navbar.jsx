@@ -9,7 +9,8 @@ import OurTeam from "../OurTeam/OurTeam";
 import OurListing from "../OurListing/OurListing";
 import Search from "../Search/Search";
 import SellHome from "../SellYourHome/SellYourHome";
-import SignIn from "../SignIn/SignIn";
+// import SignIn from "../SignIn/SignIn";
+import Registration from "../../pages/Registration";
 
 function Navb() {
   return (
@@ -61,9 +62,9 @@ function Navb() {
               </Nav.Link>
             </Nav>
 
-            {/* THis is resposible for sign in button */}
+            {/* THis is resposible for sign In button */}
             <Nav>
-              <Nav.Link as={Link} to={"/sign-in"}>
+              <Nav.Link as={Link} to={"/register"}>
                 SIGN IN
               </Nav.Link>
             </Nav>
@@ -81,7 +82,7 @@ function Navb() {
         <Route path="/our-listing" element={<OurListing />} />
         <Route path="/search" element={<Search />} />
         <Route path="/sell-your-home" element={<SellHome />} />
-        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/register" element={<Registration />} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,6 @@
 import React, { useState, setState } from "react";
 
-function SignIn() {
+function SignUp() {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [email, setEmail] = useState(null);
@@ -107,4 +107,4 @@ function SignIn() {
     </div>
   );
 }
-export default SignIn;
+export default SignUp;
