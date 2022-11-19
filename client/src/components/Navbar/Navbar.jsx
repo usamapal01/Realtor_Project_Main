@@ -9,15 +9,11 @@ import OurTeam from "../OurTeam/OurTeam";
 import OurListing from "../OurListing/OurListing";
 import Search from "../Search/Search";
 import SellHome from "../SellYourHome/SellYourHome";
-<<<<<<< Updated upstream
-import SignIn from "../SignIn/SignIn";
-=======
 // import SignIn from "../SignIn/SignIn";
 import Registration from "../../pages/Registration";
 import { UserContext } from "../../user.context";
 import Admin from "../Admin";
 import ListingDetails from "../OurListing/ListingDetails";
->>>>>>> Stashed changes
 
 function Navb() {
 
@@ -78,13 +74,8 @@ function Navb() {
               </Nav.Link>
             </Nav>
 
-            {/* THis is resposible for sign in button */}
+            {/* THis is resposible for sign In button */}
             <Nav>
-<<<<<<< Updated upstream
-              <Nav.Link as={Link} to={"/sign-in"}>
-                SIGN IN
-              </Nav.Link>
-=======
               {user ? (
                 <Nav.Link as={Link} to={"/"} onClick={logout}>
                   Logout
@@ -94,7 +85,6 @@ function Navb() {
                   Sign In
                 </Nav.Link>
               )}
->>>>>>> Stashed changes
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -111,15 +101,12 @@ function Navb() {
         <Route path="/our-listing/:id" element={<ListingDetails />} />
         <Route path="/search" element={<Search />} />
         <Route path="/sell-your-home" element={<SellHome />} />
-<<<<<<< Updated upstream
-        <Route path="/sign-in" element={<SignIn />} />
-=======
         <Route path="/register" element={<Registration />} />
         <Route path="admin" element={<Admin />} />
->>>>>>> Stashed changes
       </Routes>
     </Router>
   );
 }
 
 export default Navb;
+
