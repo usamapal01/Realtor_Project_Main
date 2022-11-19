@@ -99,8 +99,8 @@ function SignIn() {
           />
         </div>
       </div>
-      <div class="footer">
-        <button onClick={() => handleSubmit()} type="submit" class="btn">
+      <div className="footer">
+        <button onClick={() => handleSubmit()} type="submit" className="btn">
           Register
         </button>
       </div>

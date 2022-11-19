@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Home/Home.css";
 import logo from "../../img/image.jpeg";
 import cardImage from "../../img/property.jpeg";
 import TestimonialSlider from "./TestimonialSlider";
+import Axios from "axios";
 
 import {
   MDBBtn,
@@ -15,6 +16,17 @@ import {
 } from "mdb-react-ui-kit";
 
 function Home() {
+
+  const [listing, setListing] = React.useState([]);
+
+
+  useEffect(() => {
+    Axios.get("http://localhost:3200/listings").then((response) => {
+      setListing(response.data);
+    });
+  }, []);
+
+
   return (
     <div className="container-fluid">
       {/* Section 1: Search */}
@@ -73,84 +85,132 @@ function Home() {
       </div>
 
       {/*Section 4: Featured Listings*/}
-      <div className="row d-flex justify-content-center listing listing-section">
-        <div className="mb-4">
-          <h2>Our Featured Listings </h2>
-          <hr />
-          <div className="text-center mt-2">
-            <a href="../OurListing">View Listing</a>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body bottom-left">
-            <p className="card-text">$745,000</p>
-            <p className="card-text">4536 Falcon Avenue</p>
-            <p className="card-text">Long Beach, CA 90807</p>
-            <button type="button" className="btn btn-success">
-              <a href="../OurListing">View Listing</a>
-            </button>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body bottom-left">
-            <p className="card-text">$745,000</p>
-            <p className="card-text">4536 Falcon Avenue</p>
-            <p className="card-text">Long Beach, CA 90807</p>
-            <button type="button" className="btn btn-success">
-              <a href="../OurListing">View Listing</a>
-            </button>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body bottom-left">
-            <p className="card-text">$745,000</p>
-            <p className="card-text">4536 Falcon Avenue</p>
-            <p className="card-text">Long Beach, CA 90807</p>
-            <button type="button" className="btn btn-success">
-              <a href="../OurListing">View Listing</a>
-            </button>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body bottom-left">
-            <p className="card-text">$745,000</p>
-            <p className="card-text">4536 Falcon Avenue</p>
-            <p className="card-text">Long Beach, CA 90807</p>
-            <button type="button" className="btn btn-success">
-              <a href="../OurListing">View Listing</a>
-            </button>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body bottom-left">
-            <p className="card-text">$745,000</p>
-            <p className="card-text">4536 Falcon Avenue</p>
-            <p className="card-text">Long Beach, CA 90807</p>
-            <button type="button" className="btn btn-success">
-              <a href="../OurListing">View Listing</a>
-            </button>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body bottom-left">
-            <p className="card-text">$745,000</p>
-            <p className="card-text">4536 Falcon Avenue</p>
-            <p className="card-text">Long Beach, CA 90807</p>
-            <button type="button" className="btn btn-success">
-              <a href="../OurListing">View Listing</a>
-            </button>
-          </div>
+      <div className="mb-4">
+        <h2>Our Featured Listings </h2>
+        <hr />
+        <div className="text-center mt-2">
+          <a href="../our-listing" className="link-light">View Listing</a>
         </div>
       </div>
+      <div className="container-md mt-5">
+        <div className="row d-flex">
+          {listing.map((item, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <div className="card border-0">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" className="card-img-top" alt="..." />
+                <div>
+                  <div className="p-2 bg-info">
+                    <span className="me-3">{item['listing_number_of_beds']} Bed</span>
+                    -
+                    <span className="ms-3">{item['listing_number_of_baths']} Bath</span>
+                  </div>
+
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {item['listing_name'].substring(0, 50)}
+                  </h5>
+                  <p className="card-text">
+                    {item['listing_description'].substring(0, 50)}
+                  </p>
+                  <div className="row">
+                    <div className="col">
+                      <p className="card-text">
+                        Price: <small className="text-muted">
+                          ${item['listing_price']}
+                        </small>
+                      </p>
+                    </div>
+                    <div className="col">
+                      <p className="card-text">
+                        <small className="text-muted">
+                          {item['street']}, {item['city']}, {item["state"]}, {item["zipcode"]}
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="d-grid">
+                    <a href={`/our-listing/${item['listings_id']}`}
+                      className="btn btn-primary btn-sm block">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* <div className="row d-flex justify-content-center listing listing-section">
+        
+        <div className="col-md-3 m-3 card">
+          <img className="card-img-top" src={cardImage} alt="Card image cap" />
+          <div className="card-body bottom-left">
+            <p className="card-text">$745,000</p>
+            <p className="card-text">4536 Falcon Avenue</p>
+            <p className="card-text">Long Beach, CA 90807</p>
+            <button type="button" className="btn btn-success">
+              <a href="../OurListing">View Listing</a>
+            </button>
+          </div>
+        </div>
+        <div className="col-md-3 m-3 card">
+          <img className="card-img-top" src={cardImage} alt="Card image cap" />
+          <div className="card-body bottom-left">
+            <p className="card-text">$745,000</p>
+            <p className="card-text">4536 Falcon Avenue</p>
+            <p className="card-text">Long Beach, CA 90807</p>
+            <button type="button" className="btn btn-success">
+              <a href="../OurListing">View Listing</a>
+            </button>
+          </div>
+        </div>
+        <div className="col-md-3 m-3 card">
+          <img className="card-img-top" src={cardImage} alt="Card image cap" />
+          <div className="card-body bottom-left">
+            <p className="card-text">$745,000</p>
+            <p className="card-text">4536 Falcon Avenue</p>
+            <p className="card-text">Long Beach, CA 90807</p>
+            <button type="button" className="btn btn-success">
+              <a href="../OurListing">View Listing</a>
+            </button>
+          </div>
+        </div>
+        <div className="col-md-3 m-3 card">
+          <img className="card-img-top" src={cardImage} alt="Card image cap" />
+          <div className="card-body bottom-left">
+            <p className="card-text">$745,000</p>
+            <p className="card-text">4536 Falcon Avenue</p>
+            <p className="card-text">Long Beach, CA 90807</p>
+            <button type="button" className="btn btn-success">
+              <a href="../OurListing">View Listing</a>
+            </button>
+          </div>
+        </div>
+        <div className="col-md-3 m-3 card">
+          <img className="card-img-top" src={cardImage} alt="Card image cap" />
+          <div className="card-body bottom-left">
+            <p className="card-text">$745,000</p>
+            <p className="card-text">4536 Falcon Avenue</p>
+            <p className="card-text">Long Beach, CA 90807</p>
+            <button type="button" className="btn btn-success">
+              <a href="../OurListing">View Listing</a>
+            </button>
+          </div>
+        </div>
+        <div className="col-md-3 m-3 card">
+          <img className="card-img-top" src={cardImage} alt="Card image cap" />
+          <div className="card-body bottom-left">
+            <p className="card-text">$745,000</p>
+            <p className="card-text">4536 Falcon Avenue</p>
+            <p className="card-text">Long Beach, CA 90807</p>
+            <button type="button" className="btn btn-success">
+              <a href="../OurListing">View Listing</a>
+            </button>
+          </div>
+        </div>
+      </div> */}
 
       {/*Section 5: New Listings*/}
-      <div className="row d-flex justify-content-center listing new-listings">
+      <div className="">
         <div className="mb-4">
           <h2>Newly Listings ::: What your Neighbors are Saying </h2>
           <hr />
@@ -158,112 +218,51 @@ function Home() {
             <a href="../OurListing">View All</a>
           </div>
         </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">$745,000</li>
-            <li className="list-group-item">Falcon Avenue</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
-            <a href="#" className="card-link">
-              Another link
-            </a>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">$745,000</li>
-            <li className="list-group-item">Falcon Avenue</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
-            <a href="#" className="card-link">
-              Another link
-            </a>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">$745,000</li>
-            <li className="list-group-item">Falcon Avenue</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
-            <a href="#" className="card-link">
-              Another link
-            </a>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">$745,000</li>
-            <li className="list-group-item">Falcon Avenue</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
-            <a href="#" className="card-link">
-              Another link
-            </a>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">$745,000</li>
-            <li className="list-group-item">Falcon Avenue</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
-            <a href="#" className="card-link">
-              Another link
-            </a>
-          </div>
-        </div>
-        <div className="col-md-3 m-3 card">
-          <img className="card-img-top" src={cardImage} alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-          </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">$745,000</li>
-            <li className="list-group-item">Falcon Avenue</li>
-          </ul>
-          <div className="card-body">
-            <a href="#" className="card-link">
-              Card link
-            </a>
-            <a href="#" className="card-link">
-              Another link
-            </a>
+        <div className="container-md mt-5">
+          <div className="row d-flex">
+            {listing.map((item, index) => (
+              <div className="col-md-4 mb-4" key={index}>
+                <div className="card border-0">
+                  <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" className="card-img-top" alt="..." />
+                  <div>
+                    <div className="p-2 bg-info">
+                      <span className="me-3">{item['listing_number_of_beds']} Bed</span>
+                      -
+                      <span className="ms-3">{item['listing_number_of_baths']} Bath</span>
+                    </div>
+
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      {item['listing_name'].substring(0, 50)}
+                    </h5>
+                    <p className="card-text">
+                      {item['listing_description'].substring(0, 50)}
+                    </p>
+                    <div className="row">
+                      <div className="col">
+                        <p className="card-text">
+                          Price: <small className="text-muted">
+                            ${item['listing_price']}
+                          </small>
+                        </p>
+                      </div>
+                      <div className="col">
+                        <p className="card-text">
+                          <small className="text-muted">
+                            {item['street']}, {item['city']}, {item["state"]}, {item["zipcode"]}
+                          </small>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="d-grid">
+                      <a href={`/our-listing/${item['listings_id']}`}
+                        className="btn btn-primary btn-sm block">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
