@@ -10,12 +10,16 @@ import Registration from "../pages/Registration";
 function App() {
   return (
     <div>
+      {/* <Router>
+        <Route
+          path="/registration"
+          exact
+          render={(props) => <Registration />}
+        />
+        <Route path="/" exact render={(props) => <Main />} />
+      </Router> */}
       <Navb />
       <Footer />
-      {/* <Router>
-      <Route path="/registration" exact render={(props) => <Registration />} />
-      <Route path="/" exact render={(props) => <Main />} />
-    </Router> */}
     </div>
   );
 }

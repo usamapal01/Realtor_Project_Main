@@ -21,7 +21,7 @@ import { Pagination, Navigation } from "swiper";
 
 function TestimonialSlider() {
   return (
-    <section class="testimonial-section">
+    <section className="testimonial-section">
       <Swiper
         slidesPerView={1}
         // cssMode={true}
@@ -34,53 +34,53 @@ function TestimonialSlider() {
       >
         {/* Other option is create div elements in each SwiperSlide */}
         <SwiperSlide>
-          <div class="slide swiper-slide">
-            {/* <img src="#" alt="" class="image" /> */}
+          <div className="slide swiper-slide">
+            {/* <img src="#" alt="" className="image" /> */}
             <p>
               ‟I had an amazing experience working with Donna. he is very
               knowledgeable and always responds quickly when I have a question.
               I would recommend her to anyone.”
             </p>
 
-            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <i className="bx bxs-quote-alt-left quote-icon"></i>
 
-            <div class="details">
-              <span class="name">Peter</span>
-              <span class="city">Anaheim, California</span>
+            <div className="details">
+              <span className="name">Peter</span>
+              <span className="city">Anaheim, California</span>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="slide swiper-slide">
-            {/* <img src="#" alt="" class="image" /> */}
+          <div className="slide swiper-slide">
+            {/* <img src="#" alt="" className="image" /> */}
             <p>
               ‟I had an amazing experience working with Donna. he is very
               knowledgeable and always responds quickly when I have a question.
               I would recommend her to anyone.”
             </p>
 
-            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <i className="bx bxs-quote-alt-left quote-icon"></i>
 
-            <div class="details">
-              <span class="name">Peter</span>
-              <span class="job">Anaheim, California</span>
+            <div className="details">
+              <span className="name">Peter</span>
+              <span className="job">Anaheim, California</span>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div class="slide swiper-slide">
-            {/* <img src="#" alt="" class="image" /> */}
+          <div className="slide swiper-slide">
+            {/* <img src="#" alt="" className="image" /> */}
             <p>
               ‟I had an amazing experience working with Donna. he is very
               knowledgeable and always responds quickly when I have a question.
               I would recommend her to anyone.”
             </p>
 
-            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <i className="bx bxs-quote-alt-left quote-icon"></i>
 
-            <div class="details">
-              <span class="name">Peter</span>
-              <span class="job">Anaheim, California</span>
+            <div className="details">
+              <span className="name">Peter</span>
+              <span className="job">Anaheim, California</span>
             </div>
           </div>
         </SwiperSlide>

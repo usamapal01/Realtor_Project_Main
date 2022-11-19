@@ -3,21 +3,21 @@ import React from "react";
 function Contact() {
   return (
     <div>
-      <section class="module" id="about">
-        <div class="container">
-          <div class="row">
+      <section className="module" id="about">
+        <div className="container">
+          <div className="row">
             <p>&nbsp;</p>
-            <h2 className="heading" class="module-title font-alt">
+            <h2 className="heading" className="module-title font-alt">
               - Contact Us -
             </h2>
             <h1 className="sub-heading" align="center">
               Got a question? We are available …
             </h1>
           </div>
-          <div class="row">
-            <div class="col-sm-2 col-sm-offset-5">
-              <div class="large-text align-center">
-                <a class="section-scroll" href="#services">
+          <div className="row">
+            <div className="col-sm-2 col-sm-offset-5">
+              <div className="large-text align-center">
+                <a className="section-scroll" href="#services">
                   {" "}
                 </a>
               </div>
@@ -25,15 +25,15 @@ function Contact() {
           </div>
         </div>
       </section>
-      <a class="section-scroll" href="#services">
-        <hr class="divider-w" />
+      <a className="section-scroll" href="#services">
+        <hr className="divider-w" />
       </a>
 
-      <section class="module" id="contact">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8">
-              <a class="section-scroll" href="#services">
+      <section className="module" id="contact">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-8">
+              <a className="section-scroll" href="#services">
                 {" "}
               </a>
               <form
@@ -41,52 +41,52 @@ function Contact() {
                 id="form"
                 action="/el/cgi/eFormsNew.asp"
                 onsubmit="return valida(this))"
-                class="wrapper"
+                className="wrapper"
               >
-                <a class="section-scroll" href="#services">
-                  <div class="form-group">
-                    <label class="sr-only" for="name">
+                <a className="section-scroll" href="#services">
+                  <div className="form-group">
+                    <label className="sr-only" for="name">
                       Name
                     </label>
                     <input
                       name="FirstName"
                       type="text"
                       id="FirstName"
-                      class="form-control"
+                      className="form-control"
                       placeholder="First Name"
                     />
-                    <p class="help-block text-danger"></p>
+                    <p className="help-block text-danger"></p>
                   </div>
 
-                  <div class="form-group">
-                    <label class="sr-only" for="email">
+                  <div className="form-group">
+                    <label className="sr-only" for="email">
                       Last Name
                     </label>
                     <input
                       name="LastName"
-                      class="form-control"
+                      className="form-control"
                       type="text"
                       placeholder="Last Name"
                     />
-                    <p class="help-block text-danger"></p>
+                    <p className="help-block text-danger"></p>
                   </div>
 
-                  <div class="form-group">
-                    <label class="sr-only" for="email">
+                  <div className="form-group">
+                    <label className="sr-only" for="email">
                       Email
                     </label>
                     <input
                       name="Email"
-                      class="form-control"
+                      className="form-control"
                       type="text"
                       placeholder="Email"
                     />
-                    <p class="help-block text-danger"></p>
+                    <p className="help-block text-danger"></p>
                   </div>
 
-                  <div class="form-group">
+                  <div className="form-group">
                     <textarea
-                      class="form-control"
+                      className="form-control"
                       rows="7"
                       id="message"
                       name="message"
@@ -94,38 +94,38 @@ function Contact() {
                       required="required"
                       data-validation-required-message="Please enter your message."
                     ></textarea>
-                    <p class="help-block text-danger"></p>
+                    <p className="help-block text-danger"></p>
                   </div>
 
-                  <div class="form-group">
-                    <a href="BuyersVirtual.shtml" class="buyerVitrual-btn">
+                  <div className="form-group">
+                    <a href="BuyersVirtual.shtml" className="buyerVitrual-btn">
                       Buyers virtual appointment
                     </a>
-                    <a href="SellersVirtual.shtml" class="SellersVitrual-btn">
+                    <a href="SellersVirtual.shtml" className="SellersVitrual-btn">
                       Sellers virtual appointment
                     </a>
                   </div>
 
-                  <div class="col-sm-4">
-                    <div class="alt-features-item mt-0">
-                      <div class="alt-features-icon">
-                        <span class="icon-map"></span>
+                  <div className="col-sm-4">
+                    <div className="alt-features-item mt-0">
+                      <div className="alt-features-icon">
+                        <span className="icon-map"></span>
                       </div>
-                      <h3 class="alt-features-title font-alt">Where to meet</h3>
+                      <h3 className="alt-features-title font-alt">Where to meet</h3>
                       Address
                     </div>
-                    <div class="alt-features-item mt-xs-60">
-                      <div class="alt-features-icon">
-                        <span class="icon-envelope"></span>
+                    <div className="alt-features-item mt-xs-60">
+                      <div className="alt-features-icon">
+                        <span className="icon-envelope"></span>
                       </div>
-                      <h3 class="alt-features-title font-alt">Say Hello</h3>
+                      <h3 className="alt-features-title font-alt">Say Hello</h3>
                       Email: Phone:
                     </div>
-                    <div class="alt-features-item mt-xs-60">
-                      <div class="alt-features-icon">
-                        <span class=" icon-chat"></span>
+                    <div className="alt-features-item mt-xs-60">
+                      <div className="alt-features-icon">
+                        <span className=" icon-chat"></span>
                       </div>
-                      <h3 class="alt-features-title font-alt">Languages</h3>
+                      <h3 className="alt-features-title font-alt">Languages</h3>
                       English
                     </div>
                   </div>
