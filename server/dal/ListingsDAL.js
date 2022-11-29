@@ -2,7 +2,7 @@ let mysql = require('mysql2');
 let conn = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "root",
+    password: "Pass123!@123",
     database: "realtor"
   });
 function GetAllListings(){

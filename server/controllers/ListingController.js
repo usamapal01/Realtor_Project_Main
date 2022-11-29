@@ -37,7 +37,6 @@ module.exports = {
     },
 
     PostListing : (req, res) => {
-        console.log(req.file);
         //change return to be a json object instead of random strings
         if (Object.keys(req.body).length === 0){
             res.send({"Error" : "No arguments sent"});
@@ -50,6 +49,7 @@ module.exports = {
         }
         
     },
+
     DeleteListing : (req, res) => {
         if (Object.keys(req.body).length === 0){
             res.send({"Error" : "No arguments sent"});
