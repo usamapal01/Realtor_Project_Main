@@ -14,6 +14,8 @@ import Registration from "../../pages/Registration";
 import { UserContext } from "../../user.context";
 import Admin from "../Admin";
 import ListingDetails from "../OurListing/ListingDetails";
+import AdminNew from "../Admin";
+import Update from "../Update";
 
 function Navb() {
 
@@ -102,7 +104,8 @@ function Navb() {
         <Route path="/search" element={<Search />} />
         <Route path="/sell-your-home" element={<SellHome />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="admin" element={<Admin />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path='/admin/update/:id' element={<Update />} />
       </Routes>
     </Router>
   );
