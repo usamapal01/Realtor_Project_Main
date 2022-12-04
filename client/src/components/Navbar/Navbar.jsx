@@ -32,7 +32,7 @@ function Navb() {
       <Navbar bg="dark" variant={"dark"} expand="lg">
         <Container fluid>
           <Navbar.Brand className="logo" as={Link} to={"/"}>
-            Company Name or Logo
+            Patel Realtor
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">

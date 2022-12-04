@@ -14,23 +14,23 @@ const Footer = () => {
         <section className="">
           <div className="row d-flex justify-content-center">
             <div className="col-md-4 mb-4 mb-md-0">
-              <h3 className="mb-5">The Real Estate, Location</h3>
-              <h5>Agent Name</h5  >
+              <h3 className="mb-5">Location</h3>
+              <h5>Pankaj Patel</h5>
 
               <p>
-                Real Estate Sales <br /> Professional License# XXXXXXXXX <br />{" "}
-                Cell: XXX-XXX-XXXX
+                Real Estate Sales <br /> Professional License# 01923499 <br />{" "}
+                Cell: 323-317-6338
               </p>
               <p>
-                1234 Abcd Efg <br /> Long Beach, CA 90815 <br />
-                XXX-XXX-XXXX
+                11365 183rd Street,<br /> Cerritos, CA 90701 <br />
+                323-317-6338
               </p>
 
-              <p>
+              {/* <p>
                 Should you require assistance in navigating our website or
                 searching for real estate, please contact our offices at
-                XXX-XXX-XXXX.
-              </p>
+                323-317-6338.
+              </p> */}
             </div>
 
             <div className="col-md-4 mb-4">
@@ -40,11 +40,7 @@ const Footer = () => {
                 Service, Inc. as of October 16, 2022 5:35 AM UTC This
                 information is for your personal, non-commercial use and may not
                 be used for any purpose other than to identify prospective
-                properties you may be interested in purchasing. Display of MLS
-                data is usually deemed reliable but is NOT guaranteed accurate
-                by the MLS. Buyers are responsible for verifying the accuracy of
-                all information and should investigate the data themselves or
-                retain appropriate professionals.
+                properties you may be interested in purchasing. 
               </p>
               
             </div>

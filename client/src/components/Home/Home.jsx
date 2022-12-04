@@ -30,7 +30,7 @@ function Home() {
         backgroundImage: `url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80")`,
       }}>
         <h1 className="text-center pt-5" style={{ color: "black" }}>
-          - ABC Real Estates -
+          - Pankaj Patel Realtor -
         </h1>
         <h2 className="text-center mb-2">Welcome to Real Estates </h2>
         {/* <div className="input-group justify-content-center">
@@ -51,7 +51,7 @@ function Home() {
       <div className="container-md text-center">
         <div className="col-md-12 mt-5">
         <i class="bi bi-person" style={{fontSize: "30px"}}></i>
-          <h2>Hello! I am (Agent Name) </h2>
+          <h2>Hello! I am Pankaj Patel </h2>
           <p>
             I specialize in bringing you the best homes for sale and real estate
             listings in the area. Whether you are buying a home, selling a home

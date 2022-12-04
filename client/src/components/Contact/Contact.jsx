@@ -72,14 +72,14 @@ function Contact() {
             <div className="col-md-4">
               <div className="mb-5">
                 <p className="mb-2"> <i class="bi bi-map"></i> {" "}WHERE TO MEET</p>
-                <p>Angel And Patty Hernandez
-                  11027 First Ave
-                  Whittier, CA 90605</p>
+                <p>Pankaj Patel Realtor</p>
+                <p>11265 183rd Street,
+                  Cerritos, CA 90701</p>
               </div>
               <div className="mb-5">
                 <p className="mb-2"> <i class="bi bi-envelope"></i> {" "}SAY HELLO</p>
-                <p className="m-0"><a className="text-decoration-none" href="mailto:hello@example.com"> Email: hello@example.com </a></p>
-                <p><a className="text-decoration-none" href="tel:1234567890"> Phone: 123-456-7890 </a></p>
+                <p className="m-0"><a className="text-decoration-none" href="mailto:hello@example.com"> Email: pankajpatel130@yahoo.com </a></p>
+                <p><a className="text-decoration-none" href="tel:3233176338"> Phone: 323-317-6338 </a></p>
               </div>
             </div>
           </div>
