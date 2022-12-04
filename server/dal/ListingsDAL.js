@@ -392,14 +392,45 @@ function GetListingState(state, callback) {
 }
 
 function SearchListing(listing, callback) {
-    console.log(listing.minPrice);
-    var query = 'SELECT realtor.listings.*, realtor.address.* From realtor.listings inner join realtor.address on realtor.listings.address_id = realtor.address.address_id where realtor.listings.listing_price >= ? and realtor.listings.listing_price <= ? or realtor.listings.listing_number_of_beds >= ? and realtor.listings.listing_number_of_beds <= ? or realtor.listings.listing_number_of_baths >= ? and realtor.listings.listing_number_of_baths <= ? or realtor.address.city = ? or realtor.address.zipcode = 999 or realtor.address.state = ?';
+
+    var query = "SELECT * FROM realtor.listings LEFT JOIN realtor.images ON realtor.listings.listing_id = realtor.images.listing_id LEFT JOIN realtor.address ON realtor.listings.listing_id = realtor.address.listing_id where realtor.listings.listing_price >= 0 and realtor.listings.listing_price <= 10000 or realtor.listings.listing_number_of_beds >= 1 and realtor.listings.listing_number_of_beds <= 1 or realtor.listings.listing_number_of_baths >= 1 and realtor.listings.listing_number_of_baths <= 1 or  realtor.address.listing_city = 'Park' or realtor.address.listing_zipcode = 1234 or realtor.address.listing_state = 'CA'"
+        
 
     conn.query(query, [listing.minPrice, listing.maxPrice, listing.minBeds, listing.maxBeds, listing.minBaths, listing.maxBaths, listing.city, listing.zipcode, listing.state], function (err, res) {
         if (err) {
+        console.log(err);
+
             return callback(err, null);
         }
-        return callback(null, res);
+        
+        const listings = res.reduce((acc, row) => {
+            const listing = acc.find(list => list.listing_id === row.listing_id);
+            if (listing) {
+                listing.images.push({ filename: row.listing_filename, mimetype: row.listing_mimetype, id: row.image_id });
+            } else {
+                acc.push({
+                    listing_id: row.listing_id,
+                    listing_name: row.listing_name,
+                    listing_price: row.listing_price,
+                    listing_description: row.listing_description,
+                    listing_number_of_beds: row.listing_number_of_beds,
+                    listing_number_of_baths: row.listing_number_of_baths,
+                    listing_status: row.listing_status,
+                    listing_date: row.listing_date,
+                    address_id: row.address_id,
+                    listing_state: row.listing_state,
+                    listing_city: row.listing_city,
+                    listing_street: row.listing_street,
+                    listing_zipcode: row.listing_zipcode,
+                    listing_lat: row.listing_lat,
+                    listing_lng: row.listing_lng,
+                    images: [{ filename: row.listing_filename, listing_mimetype: row.listing_mimetype, id: row.image_id }]
+                });
+            }
+            return acc;
+        }, []);
+
+        return callback(null, listings);
     })
 }
 
