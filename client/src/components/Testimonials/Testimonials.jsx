@@ -9,17 +9,17 @@ function Testimonials() {
       description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone. "
     },
     {
-      name: "Peter",
+      name: "Emma",
       state: "California",
       description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone."
     },
     {
-      name: "Peter",
+      name: "John",
       state: "California",
       description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone."
     },
     {
-      name: "Peter",
+      name: "Ramirez",
       state: "California",
       description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone."
     },
