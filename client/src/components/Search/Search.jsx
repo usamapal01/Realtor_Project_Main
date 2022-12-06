@@ -73,7 +73,7 @@ function Search() {
       <div className="col-md-10">
         <form className="row gy-4 d-flex" onSubmit={search}>
           <div className="col-md-6">
-            <input name="City" class="form-control" tabindex="1" required placeholder="City" list="datalist1"
+            <input name="City" class="form-control" tabindex="1" placeholder="City" list="datalist1"
               onChange={(e) => {
                 setCity(e.target.value)
                 console.log(e.target.value)
