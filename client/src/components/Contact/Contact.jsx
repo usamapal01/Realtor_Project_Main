@@ -1,7 +1,31 @@
 import React from "react";
 import { PopupButton } from "react-calendly";
+import Axios from "axios";
 
 function Contact() {
+
+
+  const [name, setName] = React.useState("")
+  const [email, setEmail] = React.useState("")
+  const [message, setMessage] = React.useState("")
+  const [apiMessage, setApiMessage] = React.useState("")
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await Axios.post("http://localhost:3200/contact/ContactAdmin", {
+
+      name: name,
+      email: email,
+      message: message
+    })
+    .then((res) => {
+      setApiMessage(res.data.msg)
+      console.log(res)
+    })
+  }
+
+
   return (
     <div>
       <section className="module" id="contact">
@@ -9,8 +33,16 @@ function Contact() {
           <h1 className="heading">- Contact Us -</h1>
           <h3 className="text-center mb-5">Got a question? We are available</h3>
           <div className="row d-flex">
+           
             <div className="col-md-8">
-              <form>
+            {
+              apiMessage == "Message sent successfully" ? 
+              <div class="alert alert-primary" role="alert">
+                {apiMessage}
+            </div>
+              : ""
+            }
+              <form onSubmit={handleSubmit}>
                 {/* <div className="form-group mb-3">
                   <input
                     type="text"
@@ -25,6 +57,7 @@ function Contact() {
                     className="form-control"
                     id="lname"
                     placeholder="Your Name"
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="form-group mb-3">
@@ -33,6 +66,7 @@ function Contact() {
                     className="form-control"
                     id="email"
                     placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form-group mb-3">
@@ -41,6 +75,7 @@ function Contact() {
                     id="message"
                     rows="5"
                     placeholder="Your Message"
+                    onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
                 </div>
                 <div className="d-grid">
