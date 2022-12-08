@@ -149,8 +149,6 @@ function PostListing(requestBody, files, callback) {
 }
 function DeleteListing(requestBody, callback) {
 
-    console.log(requestBody);
-
     listingDAL.DeleteListing(requestBody.listings_id, function (err, response) {
         if (err) {
             return callback({
@@ -158,36 +156,26 @@ function DeleteListing(requestBody, callback) {
                 "Rows Deleted": ""
             })
         }
-        return callback({
-            "Error": "",
-            "Rows Deleted": response.affectedRows
-        });
-    })
-
-    listingDAL.DeleteAddress(requestBody.listings_id, function (err, response) {
-        if (err) {
-            return callback({
-                "Error": err,
-                "Rows Deleted": ""
+        listingDAL.DeleteAddress(requestBody.listings_id, function (err, response) {
+            if (err) { 
+                return callback({
+                    "Error": err,
+                    "Rows Deleted": ""
+                })
+            }
+            listingDAL.DeleteListingPhoto(requestBody.listings_id, function (err, response) {
+                if (err) {
+                    return callback({
+                        "Error": err,
+                        "Rows Deleted": ""
+                    })
+                }
+                return callback({
+                    "Error": "",
+                    "Rows Deleted": response.affectedRows
+                });
             })
-        }
-        return callback({
-            "Error": "",
-            "Rows Deleted": response.affectedRows
-        });
-    })
-
-    listingDAL.DeleteListingPhoto(requestBody.listings_id, function (err, response) {
-        if (err) {
-            return callback({
-                "Error": err,
-                "Rows Deleted": ""
-            })
-        }
-        return callback({
-            "Error": "",
-            "Rows Deleted": response.affectedRows
-        });
+        })
     })
 }
 function DeleteAddress(requestBody, callback) {

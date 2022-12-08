@@ -147,7 +147,7 @@ export default function Admin() {
     ).then(() => {
 
       console.log("success");
-      // window.location.reload();
+      window.location.reload();
     }).catch((err) => {
       console.log(err);
     });
