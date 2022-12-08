@@ -2,15 +2,19 @@ let mysql = require('mysql2');
 const bcrypt = require("bcrypt");
 const conn = require('../database');
 
-  function PostUser(username, hash){
-    conn.query(
-        "INSERT INTO realtor.users (username, password, role) VALUES (?,?, 'user')",
-        [username, hash],
-        (err, result) => {
-          console.log(err);
+function PostUser(username, hash, callback) {
+    var query = "INSERT INTO realtor.users (username, password, role) VALUES (?,?, 'user')";
+    conn.query( query, [username, hash], function (err, result) {
+            
+            if (err) {
+                return callback(err, null);
+            }
+            else {
+                callback(null, result);
+            }
         }
-      );
-  }
+    );
+}
 
   function getUser(username, password, callback){
     var query = 'select * from realtor.users where username = ?';

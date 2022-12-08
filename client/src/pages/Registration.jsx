@@ -31,31 +31,29 @@ export default function Registration() {
 
   Axios.defaults.withCredentials = true;
 
-  const register = (e) => {
+  async function register(e) {
     e.preventDefault();
     try {
-      Axios.post("http://localhost:3200/register", {
-      username: usernameReg,
-      password: passwordReg,
-    }).then((response) => {
-      setUser(response.data);
-      if(response.data.duplicate){
-        setIsDuplicate(true);
-      } else {
-        setIsDuplicate(false);
-        navigate("/");
-      }
-    });
+      await Axios.post("http://localhost:3200/register", {
+        username: usernameReg,
+        password: passwordReg,
+      }).then((response) => {
+        if(response.data.sqlMessage.includes("Duplicate")) {
+          setIsDuplicate(true);
+        } else {
+          setIsDuplicate(false);
+          navigate("/");
+        }
+      });
     } catch (error) {
       setUser(null)
     }
-    
   };
 
-  const login = (e) => {
+  function login(e) {
     e.preventDefault();
-    try {
-      Axios.post("http://localhost:3200/login", {
+
+    Axios.post("http://localhost:3200/login", {
       username: username,
       password: password,
     }).then((response) => {
@@ -64,20 +62,17 @@ export default function Registration() {
         setIsWrong(true);
         setUser(null);
       }
-      setUser(response.data);
       if(response.data.role === "admin"){
         setIsLogin(true);
         navigate("/admin");
-      } else {
+        setUser(response.data);
+      }
+      if(response.data.role === "user"){
         setIsLogin(true);
         navigate("/");
+        setUser(response.data);
       }
-    });
-    } catch (error) {
-      setUser(null);
-      console.log(error);
-    }
-    
+    })  
   };
 
   // useEffect(() => {
@@ -91,10 +86,11 @@ export default function Registration() {
   return (
     <div className="App">
       <div className="registration">
-        <h6 style={{color: "white", marginTop: "20px"}}>{
+      <h1>Registration</h1>
+        <h6 style={{color: "black", marginTop: "20px"}}>{
           isDuplicate ? "Username already exists" : ""
           }</h6>
-        <h1>Registration</h1>
+        
         <form onSubmit={register}>
         <input
           type="text"
