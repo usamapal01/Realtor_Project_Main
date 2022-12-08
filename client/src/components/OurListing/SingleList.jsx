@@ -25,7 +25,8 @@ export default function SingleList(props) {
                 {item['listing_name'].substring(0, 50)}
               </h5>
               <p className="card-text">
-                {item['listing_description'].substring(0, 50)}
+              {/* resposible for displaying description in the listing view card */}
+                {item['listing_description'].substring(0, 100) + "..."}
               </p>
               <div className="row">
                 <div className="col">

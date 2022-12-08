@@ -160,7 +160,7 @@ function Home() {
         <h2 className="text-center"> Contact Information </h2>
       </div>
       <h4 className="text-center mb-3">
-        Please contact me for any more information or inquiry..!!
+        Please contact us for any more information or inquiry
       </h4>
       <a href="../contact" className="link-light d-flex justify-content-center mb-5">
         <button type="button" className="btn btn-primary">

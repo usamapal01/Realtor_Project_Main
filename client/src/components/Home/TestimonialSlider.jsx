@@ -46,7 +46,7 @@ function TestimonialSlider() {
 
             <div className="details">
               <span className="name">Peter</span>
-              <span className="city">Anaheim, California</span>
+              <span className="job">Anaheim, California</span>
             </div>
           </div>
         </SwiperSlide>
@@ -54,9 +54,8 @@ function TestimonialSlider() {
           <div className="slide swiper-slide">
             {/* <img src="#" alt="" className="image" /> */}
             <p>
-              ‟I had an amazing experience working with Donna. he is very
-              knowledgeable and always responds quickly when I have a question.
-              I would recommend her to anyone.”
+              ‟Pankaj Patel was very helpful in getting us a home. Gave us many options and also kept in mind what we were looking for, 
+              very professional at what he was doing, highly recommend him whenever buying a house. I will keep him as an agent for future buying or selling.”
             </p>
 
             <i className="bx bxs-quote-alt-left quote-icon"></i>
@@ -71,9 +70,8 @@ function TestimonialSlider() {
           <div className="slide swiper-slide">
             {/* <img src="#" alt="" className="image" /> */}
             <p>
-              ‟I had an amazing experience working with Donna. he is very
-              knowledgeable and always responds quickly when I have a question.
-              I would recommend her to anyone.”
+              ‟Donna has been such an essential figure in helping me look for homes in Lakewood. 
+              She is very much acquainted with the area and her positive attitude makes me feel confident that she will find the right house for me.”
             </p>
 
             <i className="bx bxs-quote-alt-left quote-icon"></i>

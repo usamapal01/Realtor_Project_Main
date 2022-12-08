@@ -5,23 +5,23 @@ function Testimonials() {
   const testimonials = [
     {
       name: "Peter",
-      state: "California",
+      state: "Anaheim, California",
       description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone. "
     },
     {
       name: "Emma",
-      state: "California",
-      description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone."
+      state: "Cerritos, California",
+      description: "Pankaj was very helpful in getting us a home. Gave us many options and also kept in mind what we were looking for, very professional at what he was doing, highly recommend."
     },
     {
       name: "John",
-      state: "California",
-      description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone."
+      state: "Lakewood, California",
+      description: "Donna has been such an essential figure in helping me look for homes in Lakewood. She is very much acquainted with the area and her positive attitude makes me feel confident."
     },
     {
       name: "Ramirez",
-      state: "California",
-      description: "I had an amazing experience working with Donna. he is very knowledgeable and always responds quickly when I have aquestion. I would recommend her to anyone."
+      state: "Long Beach, California",
+      description: "We originally were looking to rent a home and never thought in a million years that we would be purchasing a home instead. Kevin was able to get us qualified and now we will be buying our first home."
     },
   ]
 

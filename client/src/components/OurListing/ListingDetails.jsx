@@ -68,7 +68,7 @@ export default function ListingDetails() {
                         <div className='list-group-item'>
                             <h6><span className='fw-bold'>Property Status: </span>
                                 {
-                                    listing['listing_status'] === 1 ? 'For Sale' : "Not For Sale"
+                                    listing['listing_status'] === 1 ? 'For Sale' : "Sold"
                                 }
                             </h6>
                         </div>
