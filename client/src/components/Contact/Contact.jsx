@@ -113,7 +113,7 @@ function Contact() {
               </div>
               <div className="mb-5">
                 <p className="mb-2"> <i class="bi bi-envelope"></i> {" "}SAY HELLO</p>
-                <p className="m-0"><a className="text-decoration-none" href="mailto:hello@example.com"> Email: pankajpatel130@yahoo.com </a></p>
+                <p className="m-0"><a className="text-decoration-none" href="mailto:pankajpatel130@yahoo.com"> Email: pankajpatel130@yahoo.com </a></p>
                 <p><a className="text-decoration-none" href="tel:3233176338"> Phone: 323-317-6338 </a></p>
               </div>
             </div>
