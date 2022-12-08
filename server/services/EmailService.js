@@ -11,10 +11,10 @@ const AWS_SES = new AWS.SES(SES_CONFIG);
 
 let sendEmail = (recipientEmail, name, message) => {
     let params = {
-      Source: 'angelcueva47@gmail.com',
+      Source: 'usamapal36@gmail.com',
       Destination: {
         ToAddresses: [
-          recipientEmail
+          "usamapal36@gmail.com"
         ],
       },
       ReplyToAddresses: [],
@@ -22,7 +22,7 @@ let sendEmail = (recipientEmail, name, message) => {
         Body: {
           Html: {
             Charset: 'UTF-8',
-            Data: message,
+            Data: message+"\n Contact Email: "+ recipientEmail,
           },
         },
         Subject: {

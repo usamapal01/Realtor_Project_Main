@@ -11,20 +11,20 @@ function Contact() {
           <div className="row d-flex">
             <div className="col-md-8">
               <form>
-                <div className="form-group mb-3">
+                {/* <div className="form-group mb-3">
                   <input
                     type="text"
                     className="form-control"
                     id="fname"
                     placeholder="First Name"
                   />
-                </div>
+                </div> */}
                 <div className="form-group mb-3">
                   <input
                     type="text"
                     className="form-control"
                     id="lname"
-                    placeholder="Last Name"
+                    placeholder="Your Name"
                   />
                 </div>
                 <div className="form-group mb-3">
