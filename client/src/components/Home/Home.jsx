@@ -5,30 +5,27 @@ import Axios from "axios";
 import SingleList from "../OurListing/SingleList";
 
 function Home() {
-
   const [listing, setListing] = React.useState([]);
 
   useEffect(() => {
     try {
-      Axios.get(`${process.env.REACT_APP_API_BASE_URL}/listings`).then((response) => {
-      setListing(response.data);
-    });
     } catch (error) {
       console.log(error);
     }
-    
   }, []);
-
 
   return (
     <div className="container-fluid">
       {/* Section 1: Search */}
-      <div className="row banner_search pt-5" style={{
-        height: "300px",
-        backgroundSize: "cover",
-      
-        backgroundImage: `url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80")`,
-      }}>
+      <div
+        className="row banner_search pt-5"
+        style={{
+          height: "300px",
+          backgroundSize: "cover",
+
+          backgroundImage: `url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80")`,
+        }}
+      >
         <h1 className="text-center pt-5" style={{ color: "black" }}>
           - Pankaj Patel Realtor -
         </h1>
@@ -50,7 +47,7 @@ function Home() {
       {/*Section 2: About Agent*/}
       <div className="container-md text-center">
         <div className="col-md-12 mt-5">
-        <i class="bi bi-person" style={{fontSize: "30px"}}></i>
+          <i class="bi bi-person" style={{ fontSize: "30px" }}></i>
           <h2>Hello! I am Pankaj Patel </h2>
           <p>
             I specialize in bringing you the best homes for sale and real estate
@@ -62,10 +59,12 @@ function Home() {
 
       {/*Section 4: Featured Listings*/}
       <div className="container-md mt-5">
-      <h2 className="text-center">Our Featured Listings </h2>
+        <h2 className="text-center">Our Featured Listings </h2>
         <hr />
         <div className="text-center mt-2">
-          <a href="../our-listing" className="link-light">View Listing</a>
+          <a href="../our-listing" className="link-light">
+            View Listing
+          </a>
         </div>
         <SingleList listing={listing} />
       </div>
@@ -140,14 +139,12 @@ function Home() {
       </div> */}
 
       {/*Section 5: New Listings*/}
-      
 
-        <div className="container-md mt-5">
+      <div className="container-md mt-5">
         <h2 className="text-center">Newly Listed</h2>
         <hr />
         <SingleList listing={listing} />
-          
-        </div>
+      </div>
 
       {/*Section 6: Testimonials */}
       <div className="row mb-5">
@@ -162,7 +159,10 @@ function Home() {
       <h4 className="text-center mb-3">
         Please contact us for any more information or inquiry
       </h4>
-      <a href="../contact" className="link-light d-flex justify-content-center mb-5">
+      <a
+        href="../contact"
+        className="link-light d-flex justify-content-center mb-5"
+      >
         <button type="button" className="btn btn-primary">
           Contact Us
         </button>
