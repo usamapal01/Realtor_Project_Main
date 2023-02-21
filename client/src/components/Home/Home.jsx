@@ -8,7 +8,14 @@ function Home() {
   const [listing, setListing] = React.useState([]);
 
   useEffect(() => {
+    
+    
     try {
+      Axios.get(`${process.env.REACT_APP_API_BASE_URL}/listings`).then(
+        (response) => {
+          setListing(response.data);
+        }
+      );
     } catch (error) {
       console.log(error);
     }
